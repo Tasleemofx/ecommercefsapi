@@ -10,11 +10,11 @@ const Jumbotron = () => {
             alt="product-example"
           />
           <div className="card-img-overlay d-flex flex-column justify-content-center">
-            <p className="card-text fs-2">
+            <p className="card-text fs-4">
               Shop with us
               <br /> and Feel the difference
             </p>
-            <p className="card-text fs-2 fw-bold text-uppercase">The best prices around you</p>
+            <p className="card-text fs-5 fw-bold text-uppercase">The best prices around you</p>
           </div>
         </div>
       </section>

@@ -19,7 +19,7 @@ const Home = () => {
             <RandomProduct
               className="col-md-3"
               title="Promos and Bonuses"
-              description="Purchases more than $500 and you get a 30% discount."
+              description="Get a 30% discount for purchases more than $500"
               where=" to Products"
             />
             <RandomProduct

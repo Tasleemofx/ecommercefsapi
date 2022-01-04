@@ -1,8 +1,11 @@
 import React,{useState, useEffect} from "react";
 import axios from "axios";
 import ProductNav from "./ProductNav";
+import { NavLink } from "react-router-dom";
 
 const Products = () => {
+
+    
     const [data, setData] = useState([]);
     const [categories, setCategories] = useState([])
     const [filterable, setFilterable] = useState([]);
@@ -47,9 +50,9 @@ const Products = () => {
                       {title.substring(0, 12)}
                     </h5>
                     <p className="card-text">${price}</p>
-                    <a href="#" className="btn btn-primary">
+                    <NavLink to={`/product/${id}`} className="btn btn-primary">
                       Details
-                    </a>
+                    </NavLink>
                   </div>
                 </div>
               </div>

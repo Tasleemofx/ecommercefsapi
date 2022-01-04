@@ -1,7 +1,7 @@
 import { MdLogin } from "react-icons/md";
 import { FaCartArrowDown, FaUserPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Home from "./Home"
+
 import Products from "./Products";
 
 export default function Navbar() {
@@ -26,40 +26,40 @@ export default function Navbar() {
             className="collapse navbar-collapse "
             id="navbarSupportedContent"
           >
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+            <ul className="navbar-nav me-auto mb-2">
+              <li className="nav-item m-3">
+                <Link className="nav-a active" aria-current="page" to='/'>
                   Home
-                </a>
+                </Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
+              <li className="nav-item m-3">
+                <Link className="nav-a" to="/Products">
                   Products
-                </a>
+                </Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
+              <li className="nav-item m-3">
+                <Link className="nav-a" to="/About">
                   About
-                </a>
+                </Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
+              <li className="nav-item m-3">
+                <Link className="nav-a" to="/">
                   Contact
-                </a>
+                </Link>
               </li>
               <div className="btn">
-                <a href="" className="btn btn-outline-dark ms-4">
+                <Link to="/" className="btn btn-outline-dark ms-4">
                   <MdLogin />
                   Login
-                </a>
-                <a href="" className="btn btn-outline-dark ms-4">
+                </Link>
+                <Link to="/" className="btn btn-outline-dark ms-4">
                   <FaUserPlus />
                   Sign Up
-                </a>
-                <a href="" className="btn btn-outline-dark ms-4">
+                </Link>
+                <Link to="/" className="btn btn-outline-dark ms-4">
                   <FaCartArrowDown />
                   Cart(0)
-                </a>
+                </Link>
               </div>
             </ul>
           </div>

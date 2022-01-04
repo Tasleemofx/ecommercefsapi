@@ -5,7 +5,7 @@ const Subscribe = () => {
           Join our Newsletter to get latest updates on new arrivals and trending
           fashion
         </p>
-        <form className="text-center">
+        <form className="text-center mb-5">
           <input
             type="email"
             placeholder="example@email.com"
