@@ -66,9 +66,9 @@ const Product = () => {
             </span>
           </h4>
           <h3>{product.category}</h3>
-          <button className="btn btn-outline-dark m-2">Add to cart</button>
+          <button className="btn btn-dark m-2">Add to cart</button>
           <a href="tel:07038655608">
-            <button className="btn btn-outline-dark m-2">
+            <button className="btn btn-dark m-2">
               Call to Order <BsTelephoneFill></BsTelephoneFill>
             </button>
           </a>

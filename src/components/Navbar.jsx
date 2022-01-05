@@ -2,7 +2,6 @@ import { MdLogin } from "react-icons/md";
 import { FaCartArrowDown, FaUserPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import Products from "./Products";
 
 export default function Navbar() {
     return (
@@ -23,7 +22,7 @@ export default function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div
-            className="collapse navbar-collapse "
+            className="collapse navbar-collapse"
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav me-auto mb-2">
@@ -47,21 +46,21 @@ export default function Navbar() {
                   Contact
                 </Link>
               </li>
+              </ul>
               <div className="btn">
-                <Link to="/" className="btn btn-outline-dark ms-4">
+                <Link to="/login" className="btn btn-outline-dark ms-4">
                   <MdLogin />
                   Login
                 </Link>
-                <Link to="/" className="btn btn-outline-dark ms-4">
+                <Link to="/sign-up" className="btn btn-outline-dark ms-4">
                   <FaUserPlus />
                   Sign Up
                 </Link>
-                <Link to="/" className="btn btn-outline-dark ms-4">
+                <Link to="/cart" className="btn btn-outline-dark ms-4">
                   <FaCartArrowDown />
                   Cart(0)
                 </Link>
               </div>
-            </ul>
           </div>
         </div>
       </nav>
