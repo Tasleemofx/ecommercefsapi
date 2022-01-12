@@ -23,7 +23,7 @@ const Product = () => {
             src={product.image}
             alt={product.title}
             height="300em"
-            className="m-5"
+            className="m-5 w-50"
           />
         </div>
 
