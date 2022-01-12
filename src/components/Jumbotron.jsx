@@ -29,7 +29,7 @@ const Jumbotron = () => {
               aria-label="Slide 3"
             ></button>
           </div>
-          <div className="carousel-inner w-75 mx-auto">
+          <div className="carousel-inner w-100 mx-auto">
             <div className="carousel-item active">
               <img
                 src="images/cotton.jpg"
@@ -65,9 +65,7 @@ const Jumbotron = () => {
               />
               <div className="carousel-caption d-none d-md-block">
                 <h5>Latest products</h5>
-                <p>
-                  Get the best products at the the lowest possible prices
-                </p>
+                <p>Get the best products at the the lowest possible prices</p>
               </div>
             </div>
           </div>
