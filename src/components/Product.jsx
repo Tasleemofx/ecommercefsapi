@@ -3,19 +3,27 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
 import { BsTelephoneFill } from "react-icons/bs";
+import { useSelector, useDispatch } from "react-redux";
+import { add, remove } from "../app/itemSlice";
 
 const Product = () => {
+  const itemsArray = useSelector((state) => state);
+  const dispatch = useDispatch();
     const [product, setProduct] = useState(null)
     const {id}= useParams();
     useEffect(() => {
+      const abortion = new AbortController
         axios.get(`https://fakestoreapi.com/products/${id}`)
         .then(response=> setProduct(response.data))
+       abortion.abort()
     }, [id, product])
     if( product === null){
         return( 
         <h1 className="text-center align-middle">....Loading....</h1>
         )
     }
+    
+
     return (
       <section className="row">
         <div className="col-md-5">
@@ -66,7 +74,10 @@ const Product = () => {
             </span>
           </h4>
           <h3>{product.category}</h3>
-          <button className="btn btn-dark m-2">Add to cart</button>
+          <button className="btn btn-dark m-2"
+          onClick={()=>{
+             dispatch(add(product))}}
+          >Add to cart</button>
           <a href="tel:07038655608">
             <button className="btn btn-dark m-2">
               Call to Order <BsTelephoneFill></BsTelephoneFill>
