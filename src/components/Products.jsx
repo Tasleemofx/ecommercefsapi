@@ -10,14 +10,17 @@ const Products = () => {
     const [categories, setCategories] = useState([])
     const [filterable, setFilterable] = useState([]);
     const productEffect=()=> {
+      const abortion = new AbortController()
         axios.get('https://fakestoreapi.com/products')
         .then(response=> {
             setData(response.data)
             setFilterable(response.data)
             setCategories(response.data.map(item=>item.category))
+            
         })
+        abortion.abort();
     }
-    // I wanted to test useMemo()
+    
     const handleFilter=(category)=>{
         if(category==="all"){
             setFilterable(data)

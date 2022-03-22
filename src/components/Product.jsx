@@ -1,25 +1,27 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import Skeleton from "react-loading-skeleton";
+import 'react-loading-skeleton/dist/skeleton.css';
 import { useParams } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
 import { BsTelephoneFill } from "react-icons/bs";
-import { useSelector, useDispatch } from "react-redux";
-import { add, remove } from "../app/itemSlice";
+import { useDispatch } from "react-redux";
+import { add } from "../app/itemSlice";
 
 const Product = () => {
-  const itemsArray = useSelector((state) => state);
+  // const itemsArray = useSelector((state) => state);
   const dispatch = useDispatch();
     const [product, setProduct] = useState(null)
     const {id}= useParams();
     useEffect(() => {
-      const abortion = new AbortController
+      const abortion = new AbortController()
         axios.get(`https://fakestoreapi.com/products/${id}`)
         .then(response=> setProduct(response.data))
        abortion.abort()
     }, [id, product])
     if( product === null){
         return( 
-        <h1 className="text-center align-middle">....Loading....</h1>
+        <Skeleton count={7}/>
         )
     }
     

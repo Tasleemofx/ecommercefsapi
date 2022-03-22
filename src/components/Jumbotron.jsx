@@ -37,7 +37,7 @@ const Jumbotron = () => {
                 alt="..."
                 height="500px"
               />
-              <div className="carousel-caption d-none d-md-block text-dark">
+              <div className="carousel-caption d-none d-md-block text-white">
                 <h5>Your style matters to us</h5>
                 <p>Let's make you fashionable</p>
               </div>
