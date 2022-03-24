@@ -32,7 +32,7 @@ const Jumbotron = () => {
           <div className="carousel-inner w-100 mx-auto">
             <div className="carousel-item active">
               <img
-                src="images/cotton.jpg"
+                src="images/hoodie.jpg"
                 className="d-block w-100"
                 alt="..."
                 height="500px"
@@ -52,7 +52,7 @@ const Jumbotron = () => {
               <div className="carousel-caption d-none d-md-block bg-success">
                 <h5>Shop with us</h5>
                 <p>
-                  Feel the difference. Quality and quantity, we have it all.
+                 Feel the difference. Quality and quantity, we have it all.
                 </p>
               </div>
             </div>

@@ -14,11 +14,18 @@ const Product = () => {
     const [product, setProduct] = useState(null)
     const {id}= useParams();
     useEffect(() => {
-      const abortion = new AbortController()
+      let cancel = false;
+
+      
         axios.get(`https://fakestoreapi.com/products/${id}`)
-        .then(response=> setProduct(response.data))
-       abortion.abort()
-    }, [id, product])
+        .then(response=> {
+          if (cancel) return;
+          setProduct(response.data)
+        });
+         return ()=>{
+           cancel = true
+         }
+        }, [id, product])
     if( product === null){
         return( 
         <Skeleton count={7}/>
