@@ -11,7 +11,7 @@ export default function RandomProduct({title, description, where, className}) {
     .then(response=> setData(response.data))
   }, [])
     return (
-           <div className={`card bg-warning mx-auto ${className} mb-5`}>
+           <div className={`card mx-auto ${className} mb-5`}>
             <div className="card-body">
               <img src={data.image}
               className='data-img w-50'
