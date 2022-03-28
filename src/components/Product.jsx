@@ -7,6 +7,8 @@ import { AiFillStar } from "react-icons/ai";
 import { BsTelephoneFill } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { add } from "../app/itemSlice";
+import { BiArrowBack } from "react-icons/bi"
+import { NavLink } from "react-router-dom";
 
 const Product = () => {
   // const itemsArray = useSelector((state) => state);
@@ -36,6 +38,10 @@ const Product = () => {
     return (
       <section className="row">
         <div className="col-md-5">
+          <NavLink to="/Products">
+            <BiArrowBack />
+          </NavLink>
+
           <img
             src={product.image}
             alt={product.title}
@@ -83,10 +89,14 @@ const Product = () => {
             </span>
           </h4>
           <h3>{product.category}</h3>
-          <button className="btn btn-dark m-2"
-          onClick={()=>{
-             dispatch(add(product))}}
-          >Add to cart</button>
+          <button
+            className="btn btn-dark m-2"
+            onClick={() => {
+              dispatch(add(product));
+            }}
+          >
+            Add to cart
+          </button>
           <a href="tel:07038655608">
             <button className="btn btn-dark m-2">
               Call to Order <BsTelephoneFill></BsTelephoneFill>

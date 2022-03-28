@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {remove} from "../app/itemSlice"
 import TotalItems from './TotalItems'
@@ -7,6 +7,7 @@ import TotalItems from './TotalItems'
 const Cart = () => {
     const dispatch = useDispatch()
     const cartArray = useSelector(state=> state)
+    const [quantity, setQuantity] = useState(1)
   return (
     <div>
         {cartArray.map(item=>{
@@ -21,11 +22,16 @@ const Cart = () => {
                 
                 <p
                 className='m-2'>${item.price}</p>
-                <button>
+                <button 
+                onClick={()=> {
+                  setQuantity(item.qty + 1)
+                  return [...cartArray,{ ...item,qty: quantity}]
+                }}>
                   +
                 </button>
-              1 <p className='m-2'>{item.qty}</p>
-                <button>
+               <p className='m-2'>{quantity}</p>
+                <button 
+                onClick={()=> setQuantity(item.qty -1)}>
                   -
                 </button>
                 <button

@@ -7,13 +7,14 @@ const TotalItems = () => {
   return (
     <div>
         {
-            cartArray.map((item)=>{
-              return total.push(item.price*item.qty);
+            cartArray.forEach((item)=>{
+               total.push(item.price*item.qty);
               }) 
         }
-        {
-          console.log(total)
-        }
+        {total.reduce((total,number)=>{
+            return total + number
+        },0)}
+        
     </div>
   )
 }
