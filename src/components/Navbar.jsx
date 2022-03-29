@@ -9,7 +9,6 @@ import { useSelector } from 'react-redux'
 
 export default function Navbar() {
    const itemsArray = useSelector((state)=> state)
-  
    
     return (
       

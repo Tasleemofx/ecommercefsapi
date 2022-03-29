@@ -17,10 +17,20 @@ export const itemSlice = createSlice({
             }
         },
         remove:(state,action)=>{
-             state.filter((item,i)=> i !==state.action.index)
+             state.filter((item)=> item.id !==action.payload.id)
+        },
+        addItem:(state,action)=>{
+            const itemToAdd = state.filter((item)=> item.id === action.payload.id)
+            console.log(itemToAdd)
+            return [...state, {...itemToAdd, qty: itemToAdd.qty++ }]
+        },
+        reduceItem: (state, action) => {
+            const itemToReduce = state.filter((item) => item.id === action.payload.id)
+            console.log(itemToReduce)
+            return [...state, { ...itemToReduce, qty: itemToReduce.qty-- }]
         }
     }
 })
-export const { add, remove} = itemSlice.actions
+export const { add, remove, addItem, reduceItem} = itemSlice.actions
 export default itemSlice.reducer
 

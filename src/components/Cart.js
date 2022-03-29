@@ -1,16 +1,16 @@
-import React,{useState} from 'react'
+import React, { useRef} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import {remove} from "../app/itemSlice"
+import {addItem, reduceItem, remove} from "../app/itemSlice"
 import TotalItems from './TotalItems'
 
 
 const Cart = () => {
     const dispatch = useDispatch()
     const cartArray = useSelector(state=> state)
-    const [quantity, setQuantity] = useState(1)
+    const itemRef = useRef(cartArray)
   return (
     <div>
-        {cartArray.map(item=>{
+        {itemRef.current.map(item=>{
           
           return <div key={item.id} className="d-flex flex-column w-100" >
               
@@ -23,24 +23,24 @@ const Cart = () => {
                 <p
                 className='m-2'>${item.price}</p>
                 <button 
-                onClick={()=> {
-                  setQuantity(item.qty + 1)
-                  return [...cartArray,{ ...item,qty: quantity}]
-                }}>
+                onClick={()=> dispatch(addItem(item))
+                }>
                   +
                 </button>
-               <p className='m-2'>{quantity}</p>
+               <p className='m-2'>{item.qty}</p>
                 <button 
-                onClick={()=> setQuantity(item.qty -1)}>
+                onClick={() => dispatch(reduceItem(item))}>
                   -
                 </button>
                 <button
                 className="btn btn-dark"
-                onClick={()=> dispatch(remove(item))}>Remove</button>
+                onClick={() => dispatch(remove(item)) }>Remove</button>
               </div>
-              <TotalItems/>
+              
           </div>
         })}
+      {<TotalItems/> === 0? <p>No items added to cart yet</p>:
+      <TotalItems/>}
     </div>
   )
 }
