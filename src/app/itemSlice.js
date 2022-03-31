@@ -17,17 +17,21 @@ export const itemSlice = createSlice({
             }
         },
         remove:(state,action)=>{
-             state.filter((item)=> item.id !==action.payload.id)
+             return state.filter(item=> item.id !== action.payload.id)
         },
         addItem:(state,action)=>{
-            const itemToAdd = state.filter((item)=> item.id === action.payload.id)
-            console.log(itemToAdd)
-            return [...state, {...itemToAdd, qty: itemToAdd.qty++ }]
+            state.map(item => {
+                if (item.id === action.payload.id) {
+                    item.qty++
+                }
+            })
         },
         reduceItem: (state, action) => {
-            const itemToReduce = state.filter((item) => item.id === action.payload.id)
-            console.log(itemToReduce)
-            return [...state, { ...itemToReduce, qty: itemToReduce.qty-- }]
+             state.map(item=>{
+                if(item.id===action.payload.id){
+                    item.qty--
+                }
+            })    
         }
     }
 })

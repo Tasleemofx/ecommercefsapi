@@ -1,4 +1,4 @@
-import React, { useRef} from 'react'
+
 import { useSelector, useDispatch } from 'react-redux'
 import {addItem, reduceItem, remove} from "../app/itemSlice"
 import TotalItems from './TotalItems'
@@ -7,18 +7,17 @@ import TotalItems from './TotalItems'
 const Cart = () => {
     const dispatch = useDispatch()
     const cartArray = useSelector(state=> state)
-    const itemRef = useRef(cartArray)
+  
   return (
     <div>
-        {itemRef.current.map(item=>{
-          
+        {cartArray.map(item=>{
           return <div key={item.id} className="d-flex flex-column w-100" >
               
                 <img src={item.image} className="rounded m-2" width={"100px"}
                 height={'100px'} alt="cart-item"  />
               
               <div className="col d-inline-flex m-2">
-                <h5 className="card-title m-2">{item.title.substring(0,10)}</h5>
+                <h5 className="card-title m-2">{item.title.substring(0,13)}</h5>
                 
                 <p
                 className='m-2'>${item.price}</p>
