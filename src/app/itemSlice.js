@@ -24,6 +24,7 @@ export const itemSlice = createSlice({
                 if (item.id === action.payload.id) {
                     item.qty++
                 }
+                return state
             })
         },
         reduceItem: (state, action) => {
@@ -31,6 +32,7 @@ export const itemSlice = createSlice({
                 if(item.id===action.payload.id){
                     item.qty--
                 }
+                return state
             })    
         }
     }

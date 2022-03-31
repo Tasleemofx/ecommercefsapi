@@ -38,8 +38,7 @@ const Cart = () => {
               
           </div>
         })}
-      {<TotalItems/> === 0? <p>No items added to cart yet</p>:
-      <TotalItems/>}
+      {<TotalItems/>}
     </div>
   )
 }
