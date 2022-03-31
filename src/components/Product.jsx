@@ -53,24 +53,24 @@ const Product = () => {
         <div className="col-md-7">
           <h1>{product.title}</h1>
           <p>{product.description}</p>
-          <p>${product.price}</p>
-          <h4>
+
+          <p>
             {product.rating.rate}
             <span>
-              {product.rating.rate <= 1 ? (
+              {product.rating.rate <= 1.5 ? (
                 <AiFillStar className="text-warning"></AiFillStar>
-              ) : product.rating.rate <= 2 ? (
+              ) : product.rating.rate <= 2.5 ? (
                 <>
                   <AiFillStar className="text-warning"></AiFillStar>
                   <AiFillStar className="text-warning"></AiFillStar>
                 </>
-              ) : product.rating.rate <= 3 ? (
+              ) : product.rating.rate <= 3.5 ? (
                 <>
                   <AiFillStar className="text-warning"></AiFillStar>
                   <AiFillStar className="text-warning"></AiFillStar>
                   <AiFillStar className="text-warning"></AiFillStar>
                 </>
-              ) : product.rating.rate <= 4 ? (
+              ) : product.rating.rate <= 4.5 ? (
                 <>
                   <AiFillStar className="text-warning"></AiFillStar>
                   <AiFillStar className="text-warning"></AiFillStar>
@@ -87,8 +87,9 @@ const Product = () => {
                 </>
               )}
             </span>
-          </h4>
-          <h3>{product.category}</h3>
+          </p>
+          <p className="fst-italic">{product.category}</p>
+          <h4>${product.price}</h4>
           <button
             className="btn btn-dark m-2"
             onClick={() => {
