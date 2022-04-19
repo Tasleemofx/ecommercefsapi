@@ -1,8 +1,7 @@
-
 import { useSelector, useDispatch } from 'react-redux'
 import {addItem, reduceItem, remove} from "../app/itemSlice"
 import TotalItems from './TotalItems'
-
+import { cartValue } from '../context/cartValue'
 
 const Cart = () => {
     const dispatch = useDispatch()
@@ -38,7 +37,8 @@ const Cart = () => {
               
           </div>
         })}
-      {<TotalItems/>}
+      {<TotalItems />}
+      
     </div>
   )
 }
