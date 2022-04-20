@@ -34,10 +34,11 @@ export default function App() {
   };
 
   return (
-    <div className="card m-2 align-items-center w-25 mx-auto">
+    <div className="card align-items-center w-75 m-5 p-2 mx-auto">
+      <h5>Please provide the following details to continue</h5>
       <Checkoutform />
       <FlutterWaveButton {...fwConfig} 
-      className="btn btn-dark col-3"/>
+      className="btn btn-dark col"/>
     </div>
   );
 }
