@@ -1,4 +1,4 @@
-import React, {useMemo, useContext, useState} from 'react'
+import React, {useMemo, useContext} from 'react'
 import { useSelector } from "react-redux"
 import { cartValue } from '../context/cartValue'
 import { NavLink } from "react-router-dom";
@@ -21,12 +21,12 @@ const TotalItems = ({finalvalue}) => {
   return (
     <div>
       <h5>
-        {finalvalue === 0 ? "No item in cart yet" : ` Total : $ ${finalvalue}`}
+        {finalvalue === 0 ? "No item in cart yet" : ` Total : $ ${Math.floor(finalvalue)}`}
         
       </h5>
       <NavLink to="/checkout">
         <button className="btn btn-info mb-3"
-        onClick={()=>setValue(finalvalue)}
+        onClick={()=>setValue(Math.floor(finalvalue))}
         >Proceed to checkout</button>
       </NavLink>
     </div>
